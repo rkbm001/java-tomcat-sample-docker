@@ -2,10 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-	    withMaven(maven: 'mvn')
+	    withMaven(maven: 'mvn'){
             steps {
                 sh 'mvn -f pom.xml clean package'
-            }
+           	 }
+		}
             post {
                 success {
                     echo "Now Archiving the Artifacts...."
