@@ -4,7 +4,7 @@ pipeline {
         stage('Build Application') {
             steps {
 		withMaven(maven: 'LocalMaven'){
-                sh 'mvn -f pom.xml clean package'
+                sh '/usr/bin/mvn -f pom.xml clean package'
            	 }
 		}
             post {
