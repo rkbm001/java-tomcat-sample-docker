@@ -4,9 +4,9 @@ pipeline {
         stage('Build Application') {
             steps {
 		withMaven(
-                maven: 'LocalMaven')
+                	maven: 'LocalMaven'a){
                	sh 'mvn -f pom.xml clean package'
-		}
+		} }
             post {
                 success {
                     echo "Now Archiving the Artifacts...."
