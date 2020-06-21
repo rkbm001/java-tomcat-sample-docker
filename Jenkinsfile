@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-		withMaven(maven: 'mvn'){
+		withMaven(maven: 'LocalMaven'){
                 sh 'mvn -f pom.xml clean package'
            	 }
 		}
