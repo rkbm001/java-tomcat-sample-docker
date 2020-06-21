@@ -1,13 +1,10 @@
 pipeline {
     agent any
-    tools {
-    maven 'LocalMaven'
-    }
     stages {
         stage('Build Application') {
-	 withMaven(
-		maven: 'LocalMaven')
             steps {
+		withMaven(
+                maven: 'LocalMaven')
                	sh 'mvn -f pom.xml clean package'
 		}
             post {
